@@ -4,7 +4,7 @@ class Hash {
   }
 
   isEmpty(){
-    if (Object.keys(myObj).length > 0){
+    if (Object.keys(this.object).length > 0){
       return true }
     else {
       return false
@@ -19,13 +19,21 @@ class Hash {
   return false
   }
   merge(anotherHash){
-    for (var key in anotherHash){
+    let newObject = new Object
+    for (var key in this.object){
+      newObject[key] = this.object[key]
+    for (var key in anotherHash.object){
       if (this.isKey(key) == false){
-        this.object[key] = anotherHash[key];
+        newObject[key] = anotherHash.object[key];
       }
+
     }
-    return this.object
-    }
+    // return newObject
+  }
+  var c = new Hash(newObject)
+// return result
+return c
+  }
     invert(){
       let result = {}
       for (var key in this.object){
@@ -58,10 +66,14 @@ class Hash {
   }
 
 // var a = new Hash({a:1,b:2,c:3})
-
-// console.log(a);
-// console.log(a.isKey("a"))
-// console.log(a.isKey("d"))
-// console.log(a.merge({c:3,d:4,e:5}));
-// console.log(a.invert());
-// console.log(a.inspect());
+// var b = new Hash({c:3,d:4,e:5})
+// // console.log();
+//
+// // console.log(a);
+// // console.log(a.isKey("a"))
+// // console.log(a.isKey("d"))
+// c =((a.merge(b)));
+// // console.log(newO);
+// // console.log(newO.invert());
+// console.log(c.inspect());
+// console.log(c.invert())
