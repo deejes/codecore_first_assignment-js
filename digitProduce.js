@@ -19,7 +19,8 @@ let dpsRecursive = function(n){
     return 1
   }
     else{
-    return (productDigits(dpsRecursive(n-1)) + (dpsRecursive(n-1)))
+    let y =   dpsRecursive(n-1)
+    return (productDigits(y) + (y))
 }}
 
 
@@ -41,9 +42,9 @@ var timer = function(name) {
 
 // code to benchmark
 var t = timer('mytimer');
-console.log(dpsRecursive(25)); // ~ 8 seconds
+console.log(dpsRecursive(10000)); // ~ 8 seconds
 t.stop();
 
 var t = timer('mytimer');
-console.log(dpsIterative(25)); // ~= 0 seconds
+console.log(dpsIterative(10000)); // ~= 0 seconds
 t.stop();
