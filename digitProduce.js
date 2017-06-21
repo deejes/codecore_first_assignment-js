@@ -42,9 +42,9 @@ var timer = function(name) {
 
 // code to benchmark
 var t = timer('mytimer');
-console.log(dpsRecursive(10000)); // ~ 8 seconds
+console.log(dpsRecursive(10000)); // ~ 23 miliseconds
 t.stop();
 
 var t = timer('mytimer');
-console.log(dpsIterative(10000)); // ~= 0 seconds
+console.log(dpsIterative(10000)); // ~= 11 miliseconds
 t.stop();
